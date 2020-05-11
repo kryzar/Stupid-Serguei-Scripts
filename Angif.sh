@@ -63,13 +63,15 @@ outfile_gif="${outfile_name_root}.gif"
 
 # this is where the fun begins
 # instead of downloading the full video and cropping it after,
-# we use youtube-dl --get-url to create a download url understood by ffmpeg
+# we use youtube-dl --get-url to create a download url understable by ffmpeg
 # we give it to ffmpeg in -i $url and thanks to -ss and -t,
 # ffmpeg is then able to download only the desired extract of the video
-# see JaySandhu's comment from 2015 December 06
+# for more information, see JaySandhu's comment from 2015 December 06
 # https://github.com/ytdl-org/youtube-dl/issues/622
+#
 # to convert a video to a gif using ffmpeg, see
 # https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
+#
 # -an is to get rid of the audio, see
 # https://superuser.com/questions/268985/remove-audio-from-video-file-with-ffmpeg
 url=$(youtube-dl -f best --get-url $link_youtube)
