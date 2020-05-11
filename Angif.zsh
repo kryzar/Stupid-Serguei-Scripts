@@ -8,14 +8,20 @@
 fps=10				# default is 10 fps but can be changed with -f/--fps
 width=700			# default is 700 px but can be changed with -w/--width
 
-# aller au dossier de travail
-cd ~/Downloads
-
 # parsing options (thanks to Florian)
-# https://medium.com/@Drew_Stokes/bash-argument-parsing-54f3b81a6a8f
+# see https://medium.com/@Drew_Stokes/bash-argument-parsing-54f3b81a6a8f
 args=()
 while [ $# -ge 1 ]; do
 	case $1 in
+		-d|--directory)
+			if [ -n $2 ] && [ ${2:0:1} != "-" ]; then
+				cd $2
+				shift 2
+			else
+				echo "Error: Argument for $1 is missing" >&2
+				exit 1
+			fi
+			;;
 		-f|--fps)
 			if [ -n $2 ] && [ ${2:0:1} != "-" ]; then
 				fps=$2
@@ -58,11 +64,11 @@ outfile_video="${outfile_racine_nom}.${extension}"
 outfile_gif="${outfile_racine_nom}.gif"
 
 # voir le commentaire de JaySandhu du 06-12-2015
-# https://github.com/ytdl-org/youtube-dl/issues/622
+# see https://github.com/ytdl-org/youtube-dl/issues/622
 # pour convertir une vidéo en gif avec ffmpeg, voir ça
-# https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
+# see https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
 # -an is to get rid of the audio
-# https://superuser.com/questions/268985/remove-audio-from-video-file-with-ffmpeg
+# see https://superuser.com/questions/268985/remove-audio-from-video-file-with-ffmpeg
 url=$(youtube-dl -f best --get-url $lien_youtube)
 ffmpeg -ss $debut_extrait -i $url -t $duree_extrait -an -c:v copy $outfile_video
 ffmpeg -i $outfile_video -vf "fps=${fps},scale=${width}:-1" $outfile_gif
