@@ -3,39 +3,39 @@
 # Antoine Hugounet
 
 # help message
+# to echo bold, see 
+# https://stackoverflow.com/questions/2924697/how-does-one-output-bold-text-in-bash
+bold=$(tput bold)
+normal=$(tput sgr0)
+help_message_begining="${bold}Angif${normal}
+Given a YouTube video url, a begining time and a duration time, Angif creates a gif of the video from the begining time and of the duration time you gave it. See options below.
+
+${bold}Usage${normal}
+angif [-h/--help]
+angif <url> <extract begining> <extract duration> [options]\n"
+
+help_message_options="-h/--help	display this message
+-d/--directory <dir>	create the gif in the specified <dir> directory
+-f/--fps <val>	choose the number of fps in the gif, default is 10 fps
+-w/--width <val>	choose the width (in px) of the gif, default is 700 px \n"
+
+help_message_end="${bold}Examples${normal}
+$ angif \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" 0:43 8
+This will create a 8 seconds gif from 0:43 seconds in the video, where the script is.
+$ angif \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" 0:43 8 --dir ~/Downloads
+This will do the same, except that the gif is created in ~/Downloads.
+
+${bold}Warnings${normal}
+Depending on your OS, you may need not to use marks for the YouTube url. 
+
+Made by Antoine Hugounet. This work is under license GNU General Public License v3.0.
+If you want, please contribute or help by contacting me or making a pull request.
+https://github.com/kryzar/Stupid-Serguei-Scripts"
+
 function print_help_message () {
-	# to echo bold, see 
-	# https://stackoverflow.com/questions/2924697/how-does-one-output-bold-text-in-bash
-	bold=$(tput bold)
-	normal=$(tput sgr0)
-	help_message_begining="${bold}Angif${normal}
-	Given a YouTube video url, a begining time and a duration time, Angif creates a gif of the video from the begining time and of the duration time you gave it. See options below.
-
-	${bold}Usage${normal}
-	angif [-h/--help]
-	angif <url> <extract begining> <extract duration> [options]\n"
-
-	help_message_options="-h/--help	display this message
-	-d/--directory <dir>	create the gif in the specified <dir> directory
-	-f/--fps <val>	choose the number of fps in the gif, default is 10 fps
-	-w/--width <val>	choose the width (in px) of the gif, default is 700 px \n"
-
-	help_message_end="${bold}Examples${normal}
-	angif \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" 0:43 8
-	> This will create a 8 seconds gif from 0:43 seconds in the video, where the script is.
-	angif \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" 0:43 8 --dir ~/Downloads
-	> This will do the same, except that the gif is created in ~/Downloads.
-
-	${bold}Warnings${normal}
-	Depending on your OS, you may need not to use marks for the YouTube url. 
-
-	Made by Antoine Hugounet. This work is under license GNU General Public License v3.0.
-	If you want, please contribute or help by contacting me or making a pull request.
-	https://github.com/kryzar/Stupid-Serguei-Scripts"
-
 	echo $help_message_begining
 	echo ${bold}Options${normal}
-	echo $help_message_options | grep ^- | column -ts $'\t'
+	echo $help_message_options | column -ts $'\t'
 	echo
 	echo $help_message_end
 }
