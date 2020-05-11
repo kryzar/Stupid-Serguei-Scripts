@@ -61,8 +61,11 @@ outfile_gif="${outfile_racine_nom}.gif"
 # https://github.com/ytdl-org/youtube-dl/issues/622
 # pour convertir une vidéo en gif avec ffmpeg, voir ça
 # https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
+# -an is to get rid of the audio
+# https://superuser.com/questions/268985/remove-audio-from-video-file-with-ffmpeg
 url=$(youtube-dl -f best --get-url $lien_youtube)
-ffmpeg -ss $debut_extrait -i $url -t $duree_extrait -c:v copy $outfile_video
+ffmpeg -ss $debut_extrait -i $url -t $duree_extrait -an -c:v copy $outfile_video
 ffmpeg -i $outfile_video -vf "fps=${fps},scale=${width}:-1" $outfile_gif
 
+# remove video
 rm $outfile_video
