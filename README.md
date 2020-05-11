@@ -11,7 +11,7 @@
 - ~~make it more universal than zsh and change .zsh to .sh~~.
 
 ### Maydo
-- Add a `--help`.
+- ~~Add a `--help`~~.
 
 ### Willprobablynotdo
-- Error message if no arguments are given.
+- ~~Error message if no arguments are given~~.
