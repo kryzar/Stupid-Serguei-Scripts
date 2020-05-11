@@ -25,8 +25,8 @@ outfile_gif="${outfile_racine_nom}.gif"
 # -hide_banner et -loglevel panic disent à ffmpeg de fermer sa gueule
 # pour convertir une vidéo en gif avec ffmpeg, voir ça
 # https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
-url=$(youtube-dl -f 136 --get-url $lien_youtube)
-ffmpeg -ss $debut_extrait -i $url -t $duree_extrait -c:v copy -c:a copy $outfile_video -hide_banner -loglevel panic
+url=$(youtube-dl -f best --get-url $lien_youtube)
+ffmpeg -ss $debut_extrait -i $url -t $duree_extrait -c:v copy $outfile_video -hide_banner -loglevel panic
 ffmpeg -i $outfile_video -vf "fps=${fps},scale=${largeur}:-1" $outfile_gif -hide_banner -loglevel panic
 
 rm $outfile_video
