@@ -29,8 +29,7 @@ ${bold}Warnings${normal}
 Depending on your OS, you may need not to use marks for the YouTube url. 
 
 Made by Antoine Hugounet. This work is under license GNU General Public License v3.0.
-If you want, please contribute or help by contacting me or making a pull request.
-https://github.com/kryzar/Stupid-Serguei-Scripts"
+If you want, please contribute or help by contacting me or making a pull request : https://github.com/kryzar/Stupid-Serguei-Scripts."
 
 function print_help_message () {
 	echo $help_message_begining
