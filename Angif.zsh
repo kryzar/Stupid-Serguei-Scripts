@@ -14,7 +14,7 @@ cd ~/Downloads
 # parsing options (thanks to Florian)
 # https://medium.com/@Drew_Stokes/bash-argument-parsing-54f3b81a6a8f
 args=()
-while (( $# )); do
+while [ $# -ge 1 ]; do
 	case $1 in
 		-f|--fps)
 			if [ -n $2 ] && [ ${2:0:1} != "-" ]; then
