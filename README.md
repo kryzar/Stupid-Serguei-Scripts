@@ -4,6 +4,9 @@ Given a YouTube video url, a starting time and a duration, [Angif](Angif.sh) cre
 
 [Angif](Angif.sh) comes as a single file zsh script.
 
+## Purpose
+Anki placeholder.
+
 ## Usage
 
 ### Basic usage
