@@ -25,7 +25,7 @@ angif <url> <starting time> <extract duration> [options]\n"
 help_message_options="-h/--help	display this message
 -d/--directory <dir>	create the gif in the specified <dir> directory
 -f/--fps <val>	choose the number of fps in the gif, default is 10 fps
--w/--width <val>	choose the width (in px) of the gif, default is 800 px \n"
+-w/--width <val>	choose the width (in px) of the gif, default is minimum of video width and 800 px \n"
 
 help_message_end="${bold}Examples${normal}
 $ angif \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" 0:43 8
@@ -128,7 +128,9 @@ else
 	ffmpeg -ss $starting_time -i $url -t $duration -an -y -c:v copy $outfile_video
 	# to convert a video to a gif using ffmpeg, see
 	# https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
-	ffmpeg -i $outfile_video -vf "fps=${fps},scale=${width}:-1" $outfile_gif -y
+	# the width is the minimum of the video width and 800 px, see
+	# https://askubuntu.com/questions/772377/how-to-set-maximum-video-width-in-ffmpeg
+	ffmpeg -i $outfile_video -vf "fps=${fps},scale='min(${width},iw)':-1" $outfile_gif -y
 
 	# remove video
 	if [ -f $outfile_video ] ; then
