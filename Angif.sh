@@ -24,8 +24,8 @@ angif <url> <starting time> <extract duration> [options]\n"
 
 help_message_options="-h/--help	display this message
 -d/--directory <dir>	create the gif in the specified <dir> directory
--f/--fps <val>	choose the number of fps in the gif, default is 10 fps
--w/--width <val>	choose the width (in px) of the gif, default is minimum of video width and 800 px \n"
+-f/--fps <val>	choose the number of fps in the gif, default is minimum of video frame rate and 10 fps
+-w/--width <val>	choose the width (in px) of the gif, default is minimum of video width and 800 px\n"
 
 help_message_end="${bold}Examples${normal}
 $ angif \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" 0:43 8

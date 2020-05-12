@@ -5,7 +5,13 @@ Given a YouTube video url, a starting time and a duration, [Angif](Angif.sh) cre
 [Angif](Angif.sh) comes as a single file zsh script.
 
 ## Purpose
-Anki placeholder.
+I made this script when I realised it could be a formidable tool to write [Anki](https://apps.ankiweb.net) flashcards. Apart from my mathematics studies, a great hobby of mine is cooking and I spend quite a time watching videos of chefs cooking ; I always have the pleasure of stumbling open new technique and movements (e.g. a gesture technique to [make an omurice](https://www.youtube.com/watch?v=rFAddL8g8mw)). Of course, I want to memorize them, but formulating movements or gestures by putting them into words can be quite tricky and unproductive. On the opposite, being able to observe the movement — with all its finesse and details — is the best way to memorize it if you do not have the possibility to practice it on a regular basis.
+
+Angif helps me creating flashcards on the spot when watching a video. If there is something in the video I want to memorize, I just just give the relevant extract to Angif and then copy the gif to directly put it as an answer in my  Anki flashcard. Here is an example of such a card.
+
+![Anki flashcard using Angif](bin/Anki-example.gif)
+
+There are numerous other things one can memorize with Anki and Angif: tie knots, gardening, dance moves, etc.
 
 ## Usage
 
@@ -19,8 +25,8 @@ angif <url> <starting time> <duration> [options]
 ```
 -h/--help		display the help message
 -d/--directory <dir>	create the gif in the specified <dir> directory
--f/--fps <val>		choose the number of fps in the gif, default is 10 fps
--w/--width <val>	choose the width (in px) of the gif, default is minimum of video width and 800 px \n"
+-f/--fps <val>		choose the number of fps in the gif, default is minimum of video frame rate and 10 fps
+-w/--width <val>	choose the width (in px) of the gif, default is minimum of video width and 800 px
 ```
 
 ### Examples
