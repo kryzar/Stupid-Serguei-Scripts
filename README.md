@@ -43,7 +43,9 @@ Depending on your OS, you may need to remove the quotes for the YouTube url. The
 
 ## Maydo
 - Find a way to copy the gif to the clipboard ;
-- add options to choose maximum possible width or frame rate.
+- add options to choose maximum possible width or frame rate ;
+- rewrite comments ;
+- make it work with Bash.
 
 # 2pdf2images
 
