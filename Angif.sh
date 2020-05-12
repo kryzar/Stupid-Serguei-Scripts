@@ -25,7 +25,7 @@ angif <url> <starting time> <extract duration> [options]\n"
 help_message_options="-h/--help	display this message
 -d/--directory <dir>	create the gif in the specified <dir> directory
 -f/--fps <val>	choose the number of fps in the gif, default is 10 fps
--w/--width <val>	choose the width (in px) of the gif, default is 700 px \n"
+-w/--width <val>	choose the width (in px) of the gif, default is 800 px \n"
 
 help_message_end="${bold}Examples${normal}
 $ angif \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" 0:43 8
@@ -48,7 +48,7 @@ function print_help_message () {
 
 # default parameters
 fps=10		# default is 10 fps but can be changed with -f/--fps
-width=700	# default is 700 px but can be changed with -w/--width
+width=800	# default is 800 px but can be changed with -w/--width
 
 # parsing options (thanks to Florian)
 if [[ $# == 0 || $1 == "-h" || $1 == "--help" ]] ; then

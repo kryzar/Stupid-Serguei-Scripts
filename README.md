@@ -20,7 +20,7 @@ angif <url> <starting time> <duration> [options]
 -h/--help		display the help message
 -d/--directory <dir>	create the gif in the specified <dir> directory
 -f/--fps <val>		choose the number of fps in the gif, default is 10 fps
--w/--width <val>	choose the width (in px) of the gif, default is 700 px
+-w/--width <val>	choose the width (in px) of the gif, default is 800 px
 ```
 
 ### Examples
