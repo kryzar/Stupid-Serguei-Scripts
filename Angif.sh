@@ -36,7 +36,7 @@ This will do the same, except that the gif is created in ~/Downloads.
 ${bold}Warnings${normal}
 Depending on your OS, you may need not to use marks for the YouTube url. They are required on macOS but some friends had to remove them on Linux systems.
 
-Made by Antoine Hugounet. This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details. If you want, please contribute or help by contacting me or making a pull request : https://github.com/kryzar/Stupid-Serguei-Scripts."
+Made by Antoine Hugounet. This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details. if you want, please contribute or help by contacting me or making a pull request : https://github.com/kryzar/stupid-serguei-scripts."
 
 function print_help_message () {
 	echo $help_message_begining
@@ -121,14 +121,14 @@ else
 	# for more information, see JaySandhu's comment from 2015 December 06
 	# https://github.com/ytdl-org/youtube-dl/issues/622
 	#
-	# to convert a video to a gif using ffmpeg, see
-	# https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
-	#
 	# -an is to get rid of the audio, see
 	# https://superuser.com/questions/268985/remove-audio-from-video-file-with-ffmpeg
-	url=$(youtube-dl -f bestvideo --get-url $link_youtube)
-	ffmpeg -ss $extract_begining -i $url -t $extract_duration -an -c:v copy $outfile_video
-	ffmpeg -i $outfile_video -vf "fps=${fps},scale=${width}:-1" $outfile_gif
+	# -y is to avoid ffmpeg asking us override a file already existing
+	url=$(youtube-dl --format bestvideo/best --get-url $link_youtube)
+	ffmpeg -ss $extract_begining -i $url -t $extract_duration -an -y -c:v copy $outfile_video
+	# to convert a video to a gif using ffmpeg, see
+	# https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
+	ffmpeg -i $outfile_video -vf "fps=${fps},scale=${width}:-1" $outfile_gif -y
 
 	# remove video
 	if [ -f $outfile_video ] ; then
