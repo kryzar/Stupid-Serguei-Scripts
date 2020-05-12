@@ -42,7 +42,8 @@ Depending on your OS, you may need to remove the quotes for the YouTube url. The
 - [ffmpeg](https://ffmpeg.org/download.html): required to download the video, processing it and convert it into a gif.
 
 ## Maydo
-- Find a way to copy the gif to the clipboard.
+- Find a way to copy the gif to the clipboard ;
+- add options to choose maximum possible width or frame rate.
 
 # 2pdf2images
 
