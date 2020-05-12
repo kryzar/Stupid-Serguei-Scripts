@@ -34,10 +34,9 @@ $ angif \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" 0:43 8 --dir ~/Downloads
 This will do the same, except that the gif is created in ~/Downloads.
 
 ${bold}Warnings${normal}
-Depending on your OS, you may need not to use marks for the YouTube url. 
+Depending on your OS, you may need not to use marks for the YouTube url. They are required on macOS but some friends had to remove them on Linux systems.
 
-Made by Antoine Hugounet. This work is under license GNU General Public License v3.0.
-If you want, please contribute or help by contacting me or making a pull request : https://github.com/kryzar/Stupid-Serguei-Scripts."
+Made by Antoine Hugounet. This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details. If you want, please contribute or help by contacting me or making a pull request : https://github.com/kryzar/Stupid-Serguei-Scripts."
 
 function print_help_message () {
 	echo $help_message_begining
