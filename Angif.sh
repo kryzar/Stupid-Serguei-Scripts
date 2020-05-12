@@ -36,7 +36,7 @@ This does the same, except that the gif is created in ~/Downloads.
 ${bold}Warning${normal}
 Depending on your OS, you may need to remove the quotes for the YouTube url. They are required on macOS but some friends had to remove them on Linux systems.
 
-Made by Antoine Hugounet. This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details. If you encounter any bug, please let me know. If you wish to contribute or help anyhow, please contact me or send a pull request: https://github.com/kryzar/stupid-serguei-scripts."
+Made by Antoine Hugounet. This project is licensed under the GNU General Public License v3.0 - see the LICENSE.md file in the repository (https://github.com/kryzar/stupid-serguei-scripts) for details. If you encounter any bug, please let me know. If you wish to contribute or help anyhow, please contact me or send a pull request: https://github.com/kryzar/stupid-serguei-scripts."
 
 function print_help_message () {
 	echo $help_message_begining
