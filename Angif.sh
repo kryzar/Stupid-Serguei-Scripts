@@ -127,7 +127,7 @@ else
 	#
 	# -an is to get rid of the audio, see
 	# https://superuser.com/questions/268985/remove-audio-from-video-file-with-ffmpeg
-	url=$(youtube-dl -f best --get-url $link_youtube)
+	url=$(youtube-dl -f bestvideo --get-url $link_youtube)
 	ffmpeg -ss $extract_begining -i $url -t $extract_duration -an -c:v copy $outfile_video
 	ffmpeg -i $outfile_video -vf "fps=${fps},scale=${width}:-1" $outfile_gif
 
