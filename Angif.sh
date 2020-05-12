@@ -52,10 +52,10 @@ fps=10		# default is 10 fps but can be changed with -f/--fps
 width=700	# default is 700 px but can be changed with -w/--width
 
 # parsing options (thanks to Florian)
-if [[ $# == 0 || $1 == "-h" || $1 == "--help" ]]; then
+if [[ $# == 0 || $1 == "-h" || $1 == "--help" ]] ; then
 	print_help_message
 else
-	while [ $# -ge 1 ]; do
+	while [ $# -ge 1 ] ; do
 		case $1 in
 			# boolean options
 			-h|--help)
@@ -64,7 +64,7 @@ else
 				;;
 			# options with arguments
 			-d|--directory)
-				if [ -n $2 ] && [ ${2:0:1} != "-" ]; then
+				if [ -n $2 ] && [ ${2:0:1} != "-" ] ; then
 					cd $2
 					shift 2
 				else
@@ -73,7 +73,7 @@ else
 				fi
 				;;
 			-f|--fps)
-				if [ -n $2 ] && [ ${2:0:1} != "-" ]; then
+				if [ -n $2 ] && [ ${2:0:1} != "-" ] ; then
 					fps=$2
 					shift 2
 				else
@@ -82,7 +82,7 @@ else
 				fi
 				;;
 			-w|--width)
-				if [ -n $2 ] && [ ${2:0:1} != "-" ]; then
+				if [ -n $2 ] && [ ${2:0:1} != "-" ] ; then
 					width=$2
 					shift 2
 				else
@@ -132,5 +132,7 @@ else
 	ffmpeg -i $outfile_video -vf "fps=${fps},scale=${width}:-1" $outfile_gif
 
 	# remove video
-	rm $outfile_video
+	if [ -f $outfile_video ] ; then
+		rm $outfile_video
+	fi
 fi
