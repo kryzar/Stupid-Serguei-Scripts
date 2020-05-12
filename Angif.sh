@@ -130,7 +130,9 @@ else
 	# https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
 	# the width is the minimum of the video width and 800 px, see
 	# https://askubuntu.com/questions/772377/how-to-set-maximum-video-width-in-ffmpeg
-	ffmpeg -i $outfile_video -vf "fps=${fps},scale='min(${width},iw)':-1" $outfile_gif -y
+	# -vsync vfr -r ${fps} is to limit fps, see Gyan's answer to rogerdpack
+	# https://stackoverflow.com/questions/38987396/how-can-i-limit-maximum-fps-with-ffmpeg
+	ffmpeg -i $outfile_video -vsync vfr -r ${fps} -vf "scale='min(${width},iw)':-1" $outfile_gif -y
 
 	# remove video
 	if [ -f $outfile_video ] ; then
