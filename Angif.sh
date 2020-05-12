@@ -31,9 +31,9 @@ help_message_end="${bold}Examples${normal}
 $ angif \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" 0:43 8
 This creates an 8 seconds gif from 0:43 seconds in the video, where the script is.
 $ angif \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" 0:43 8 --dir ~/Downloads
-This does the same, except that the gif will is created in ~/Downloads.
+This does the same, except that the gif is created in ~/Downloads.
 
-${bold}Warnings${normal}
+${bold}Warning${normal}
 Depending on your OS, you may need to remove the quotes for the YouTube url. They are required on macOS but some friends had to remove them on Linux systems.
 
 Made by Antoine Hugounet. This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details. If you encounter any bug, please let me know. If you wish to contribute or help anyhow, please contact me or send a pull request: https://github.com/kryzar/stupid-serguei-scripts."

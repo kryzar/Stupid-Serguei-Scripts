@@ -9,7 +9,7 @@ Given a YouTube video url, a starting time and a duration, [Angif](Angif.sh) cre
 ### Basic usage
 ```
 angif [-h/--help]
-angif <url> <starting time> <duration> [options]\n"
+angif <url> <starting time> <duration> [options]
 ```
 
 ### Options
@@ -28,9 +28,9 @@ This creates an 8 seconds gif from 0:43 seconds in the video, where the script i
 ```
 angif "https://www.youtube.com/watch?v=dQw4w9WgXcQ" 0:43 8 --dir ~/Downloads
 ```
-This does the same, except that the gif will is created in ~/Downloads.
+This does the same, except that the gif is created in ~/Downloads.
 
-### Warnings
+### Warning
 Depending on your OS, you may need to remove the quotes for the YouTube url. They are required on macOS but some friends had to remove them on Linux systems.
 
 ## Dependencies
