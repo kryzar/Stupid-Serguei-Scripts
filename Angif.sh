@@ -16,11 +16,11 @@ You should have received a copy of the GNU General Public License along with thi
 bold=$(tput bold)
 normal=$(tput sgr0)
 help_message_begining="${bold}Angif${normal}
-Given a YouTube video url, a begining time and a duration time, Angif creates a gif of the video from the begining time and of the duration time you gave it. See options below.
+Given a YouTube video url, a starting time and a duration, Angif creates a gif of the video from the starting time and of the duration you gave it. See options below.
 
 ${bold}Usage${normal}
 angif [-h/--help]
-angif <url> <extract begining> <extract duration> [options]\n"
+angif <url> <starting time> <extract duration> [options]\n"
 
 help_message_options="-h/--help	display this message
 -d/--directory <dir>	create the gif in the specified <dir> directory
@@ -29,14 +29,14 @@ help_message_options="-h/--help	display this message
 
 help_message_end="${bold}Examples${normal}
 $ angif \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" 0:43 8
-This will create a 8 seconds gif from 0:43 seconds in the video, where the script is.
+This creates an 8 seconds gif from 0:43 seconds in the video, where the script is.
 $ angif \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" 0:43 8 --dir ~/Downloads
-This will do the same, except that the gif is created in ~/Downloads.
+This does the same, except that the gif will is created in ~/Downloads.
 
 ${bold}Warnings${normal}
-Depending on your OS, you may need not to use marks for the YouTube url. They are required on macOS but some friends had to remove them on Linux systems.
+Depending on your OS, you may need to remove the quotes for the YouTube url. They are required on macOS but some friends had to remove them on Linux systems.
 
-Made by Antoine Hugounet. This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details. if you want, please contribute or help by contacting me or making a pull request : https://github.com/kryzar/stupid-serguei-scripts."
+Made by Antoine Hugounet. This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details. If you encounter any bug, please let me know. If you wish to contribute or help anyhow, please contact me or send a pull request: https://github.com/kryzar/stupid-serguei-scripts."
 
 function print_help_message () {
 	echo $help_message_begining
@@ -103,13 +103,13 @@ else
 
 	# get mandatory positional arguments
 	link_youtube=$mandatory_args[1]
-	extract_begining=$mandatory_args[2]
-	extract_duration=$mandatory_args[3]
+	starting_time=$mandatory_args[2]
+	duration=$mandatory_args[3]
 
 	# get video name and prepare various output file names
 	video_name=$(youtube-dl --get-filename $link_youtube)
 	extension="${video_name##*.}"
-	outfile_name_root="${video_name%.*}-${extract_begining}-${extract_duration}"
+	outfile_name_root="${video_name%.*}-${starting_time}-${duration}"
 	outfile_video="${outfile_name_root}.${extension}"
 	outfile_gif="${outfile_name_root}.gif"
 
@@ -125,7 +125,7 @@ else
 	# https://superuser.com/questions/268985/remove-audio-from-video-file-with-ffmpeg
 	# -y is to avoid ffmpeg asking us override a file already existing
 	url=$(youtube-dl --format bestvideo/best --get-url $link_youtube)
-	ffmpeg -ss $extract_begining -i $url -t $extract_duration -an -y -c:v copy $outfile_video
+	ffmpeg -ss $starting_time -i $url -t $duration -an -y -c:v copy $outfile_video
 	# to convert a video to a gif using ffmpeg, see
 	# https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
 	ffmpeg -i $outfile_video -vf "fps=${fps},scale=${width}:-1" $outfile_gif -y
