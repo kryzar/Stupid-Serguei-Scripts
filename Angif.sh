@@ -132,6 +132,9 @@ else
 	# https://askubuntu.com/questions/772377/how-to-set-maximum-video-width-in-ffmpeg
 	# -vsync vfr -r ${fps} is to limit fps, see Gyan's answer to rogerdpack
 	# https://stackoverflow.com/questions/38987396/how-can-i-limit-maximum-fps-with-ffmpeg
+	# previous version was -vf "fps=${fps}" and it crashed the script
+	# when the user asked for gigantic frame rates
+	# this ensures that we don't end with such crashes
 	ffmpeg -i $outfile_video -vsync vfr -r ${fps} -vf "scale='min(${width},iw)':-1" $outfile_gif -y
 
 	# remove video
