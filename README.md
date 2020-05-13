@@ -1,6 +1,6 @@
 # Angif
 
-Given a YouTube video url, a starting time and a duration, [Angif](Angif.sh) creates a gif of the video from the starting time and of the duration you gave it. See options below.
+Given a YouTube video url, a starting time and a duration, [Angif](Angif.sh) creates a gif of the video from the starting time and of the duration you gave it. See options below. Default parameters are 10 fps (or native video frame rate if it is less) and 800 px width (or native video width if it is less).
 
 [Angif](Angif.sh) comes as a single file zsh script.
 

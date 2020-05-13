@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License along with thi
 bold=$(tput bold)
 normal=$(tput sgr0)
 help_message_begining="${bold}Angif${normal}
-Given a YouTube video url, a starting time and a duration, Angif creates a gif of the video from the starting time and of the duration you gave it. See options below.
+Given a YouTube video url, a starting time and a duration, Angif creates a gif of the video from the starting time and of the duration you gave it. Default parameters are 10 fps (or native video frame rate if it is less) and 800 px width (or native video width if it is less). See options below.
 
 ${bold}Usage${normal}
 angif [-h/--help]
