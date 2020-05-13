@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 # Angif.sh
 : '
 Copyright (C) 2020 Antoine Hugounet
@@ -115,18 +115,18 @@ else
 
 	# this is where the fun begins
 	# instead of downloading the full video and cropping it after,
-	# we use youtube-dl --get-url to create a download url understable by ffmpeg
-	# we give it to ffmpeg in -i $url and thanks to -ss and -t,
-	# ffmpeg is then able to download only the desired extract of the video
+	# we use youtube-dl --get-url to create a download url understable by FFmpeg
+	# we give it to FFmpeg in -i $url and thanks to -ss and -t,
+	# FFmpeg is then able to download only the desired extract of the video
 	# for more information, see JaySandhu's comment from 2015 December 06
 	# https://github.com/ytdl-org/youtube-dl/issues/622
 	#
 	# -an is to get rid of the audio, see
 	# https://superuser.com/questions/268985/remove-audio-from-video-file-with-ffmpeg
-	# -y is to avoid ffmpeg asking us override a file already existing
+	# -y is to avoid FFmpeg asking us override a file already existing
 	url=$(youtube-dl --format bestvideo/best --get-url $link_youtube)
 	ffmpeg -ss $starting_time -i $url -t $duration -an -y -c:v copy $outfile_video
-	# to convert a video to a gif using ffmpeg, see
+	# to convert a video to a gif using FFmpeg, see
 	# https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
 	# the width is the minimum of the video width and 800 px, see
 	# https://askubuntu.com/questions/772377/how-to-set-maximum-video-width-in-ffmpeg

@@ -45,7 +45,7 @@ Depending on your OS, you may need to remove the quotes for the YouTube url. The
 ## Dependencies
 - [zsh](http://zsh.sourceforge.net): this script is to be executed with zsh ;
 - [youtube-dl](http://ytdl-org.github.io/youtube-dl/download.html): required to download the video ;
-- [ffmpeg](https://ffmpeg.org/download.html): required to download the video, processing it and convert it into a gif.
+- [FFmpeg](https://ffmpeg.org/download.html): required to download the video, processing it and convert it into a gif.
 
 ## Maydo
 - Find a way to copy the gif to the clipboard ;
