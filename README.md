@@ -54,7 +54,9 @@ Depending on your OS, you may need to remove the quotes for the YouTube url. The
 - make it work with Bash.
 
 ## Acknowledgment 
-Thanks to [Quentin Dupré](https://github.com/Nildor) and [Olivier Cornélis](https://github.com/thiswillbeyourgithub) for their technical help and re-reading.
+Thanks to :
+- [Florian Dupeyron](https://github.com/fdmysterious) for helping with the parser ;
+- [Quentin Dupré](https://github.com/Nildor) and [Olivier Cornélis](https://github.com/thiswillbeyourgithub) for their technical help and re-reading.
 
 # 2pdf2images
 
