@@ -1,11 +1,11 @@
 # Angif
 
-Given a YouTube video url, a starting time and a duration, [Angif](Angif.sh) creates a gif of the video from the starting time and of the duration you gave it. See options below. Default parameters are 10 fps (or native video frame rate if it is less) and 800 px width (or native video width if it is less).
+Given a YouTube video url, a starting time and a duration, [Angif](Angif.sh) creates a gif of the video from the starting time and of the duration you gave it. See options below. Default parameters are 10 fps (or native video frame rate if it is less than that) and 800 px width (or native video width if it is less than that).
 
 [Angif](Angif.sh) comes as a single file zsh script.
 
 ## Purpose
-I made this script when I realised it could be a formidable tool to write [Anki](https://apps.ankiweb.net) flashcards. Apart from my mathematical studies, a great hobby of mine is cooking and I spend quite a lot of time watching videos of chefs cooking ; I always have the pleasure of stumbling open new techniques and movements (e.g. a gesture technique to [make an omurice](https://www.youtube.com/watch?v=rFAddL8g8mw)). Of course, I want to memorize them, but putting movements or gestures into words can be quite tricky and unproductive. Conversely, being able to observe the movements — with all its finesse and details — is the best way to memorize it when it is impossible to practice on a regular basis.
+I made this script when I realised it could be a formidable tool to write [Anki](https://apps.ankiweb.net) flashcards. Apart from my mathematical studies, a great hobby of mine is cooking and I spend quite a lot of time watching videos of chefs cooking ; I always have the pleasure of stumbling upon new techniques and movements (e.g. a gesture technique to [make an omurice](https://www.youtube.com/watch?v=rFAddL8g8mw)). Of course, I want to memorize them, but putting movements or gestures into words can be quite tricky and unproductive. Conversely, being able to observe the movements — with all its finesse and details — is the best way to memorize it when it is impossible to practice on a regular basis.
 
 Angif helps me creating flashcards on the spot when watching a video. If there is something in the video I want to memorize, I just just give the relevant extract to Angif and then copy the gif to directly put it as an answer in my  Anki flashcard. Here is an example of such a card.
 
