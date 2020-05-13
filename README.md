@@ -53,6 +53,9 @@ Depending on your OS, you may need to remove the quotes for the YouTube url. The
 - rewrite comments ;
 - make it work with Bash.
 
+## Acknowledgment 
+Thanks to [Quentin Dupré](https://github.com/Nildor) and [Olivier Cornélis](https://github.com/thiswillbeyourgithub) for their technical help and re-reading.
+
 # 2pdf2images
 
 p l a c e h o l d e r
