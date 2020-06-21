@@ -56,7 +56,7 @@ Depending on your OS, you may need to remove the quotes for the YouTube url. The
 ## Acknowledgment 
 Thanks to :
 - [Florian Dupeyron](https://github.com/fdmysterious) for helping with the parser ;
-- [Quentin Dupré](https://github.com/Nildor) and [Olivier Cornélis](https://github.com/thiswillbeyourgithub) for their technical help and re-reading.
+- [Quentin Dupré](https://github.com/Nildor) and [thiswillbeyourgithub](https://github.com/thiswillbeyourgithub) for their technical help and re-reading.
 
 # 2pdf2images
 
